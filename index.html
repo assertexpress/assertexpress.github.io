@@ -1,195 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASSERT EXPRESS – Serviços Regulatórios | CNES</title>
-  <meta name="description" content="Criação e atualização de CNES para clínicas e profissionais da saúde. Atendimento em todo o Brasil." />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f4f6f8;
-      scroll-behavior: smooth;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ASSERT EXPRESS – Serviços Regulatórios | CNES</title>
+<meta name="description" content="Assessoria especializada em criação e atualização de CNES para clínicas e profissionais da saúde. Atendimento em todo o Brasil." />
+<meta name="keywords" content="CNES, criação de CNES, atualização CNES, serviços regulatórios, clínica, consultório" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; background: #f4f6f8; scroll-behavior: smooth; }
 
-    /* HERO */
-    header {
-      background: linear-gradient(rgba(15,76,129,0.85), rgba(26,115,232,0.85)),
-                  url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      text-align: center;
-      padding: 120px 20px;
-      animation: fadeIn 1.2s ease-in;
-    }
 
-    header img {
-      max-width: 170px;
-      margin-bottom: 25px;
-    }
+/* HERO */
+header {
+background: linear-gradient(rgba(15,76,129,0.85), rgba(26,115,232,0.85)), url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=80');
+background-size: cover; background-position: center;
+color: #fff; text-align: center; padding: 120px 20px;
+animation: fadeIn 1.2s ease-in;
+}
+header img { max-width: 170px; margin-bottom: 25px; }
+header h1 { font-size: 2.6em; margin-bottom: 15px; }
+header p { font-size: 1.2em; max-width: 850px; margin: 0 auto 25px; }
 
-    header h1 {
-      font-size: 2.6em;
-      margin-bottom: 15px;
-    }
 
-    header p {
-      font-size: 1.2em;
-      max-width: 850px;
-      margin: 0 auto 25px auto;
-    }
+.btn { display: inline-block; padding: 16px 34px; background: #25d366; color: #fff; font-weight: bold; border-radius: 50px; text-decoration: none; transition: all 0.3s; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
 
-    .btn {
-      display: inline-block;
-      padding: 16px 34px;
-      background: #25d366;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
 
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
+section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+h2 { color: #0f4c81; margin-bottom: 40px; font-size: 2.2em; text-align: center; }
 
-    section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
 
-    h2 {
-      color: #0f4c81;
-      margin-bottom: 30px;
-      font-size: 2.1em;
-      text-align: center;
-    }
+/* CARDS */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.card {
+background: #fff; padding: 35px; border-radius: 18px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+text-align: center;
+opacity: 0; transform: translateY(40px);
+transition: all 0.8s ease;
+}
+.card.show { opacity: 1; transform: translateY(0); }
+.card span { font-size: 2.5em; display: block; margin-bottom: 15px; }
 
-    .box {
-      background: #fff;
-      padding: 45px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-      margin-bottom: 50px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
 
-    .box.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.box {
+background: #fff; padding: 45px; border-radius: 18px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+margin-bottom: 50px;
+opacity: 0; transform: translateY(40px);
+transition: all 0.8s ease;
+}
+.box.show { opacity: 1; transform: translateY(0); }
 
-    ul, ol { padding-left: 20px; margin-top: 10px; }
-    li { margin-bottom: 10px; }
 
-    footer {
-      background: #0f4c81;
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-    }
+footer { background: #0f4c81; color: #fff; text-align: center; padding: 45px 20px; }
+footer a { color: #fff; text-decoration: underline; margin: 0 6px; }
 
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-      margin: 0 6px;
-    }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+/* BOTÃO FLUTUANTE */
+.whatsapp-float {
+position: fixed; bottom: 25px; right: 25px;
+background: #25d366; color: #fff;
+padding: 15px 18px; border-radius: 50%;
+font-size: 1.8em; text-decoration: none;
+box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+animation: pulse 2s infinite; z-index: 999;
+}
 
-    @media(max-width: 768px){
-      header h1 { font-size: 2em; }
-      header p { font-size: 1em; }
-    }
-  </style>
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-20px);} to {opacity:1; transform:translateY(0);} }
+@keyframes pulse { 0%{transform:scale(1);} 50%{transform:scale(1.08);} 100%{transform:scale(1);} }
+
+
+@media(max-width: 768px){ header h1 { font-size: 2em; } header p { font-size: 1em; } }
+</style>
 </head>
 <body>
 
+
 <header>
-  <img src="https://raw.githubusercontent.com/assertexpress/assertexpress.github.io/main/assert-removebg-preview%20(3).png" alt="ASSERT EXPRESS" />
-  <h1>ASSERT EXPRESS – Serviços Regulatórios</h1>
-  <p>Especialistas na <strong>criação, atualização e regularização do CNES</strong> para clínicas, consultórios e profissionais da saúde em todo o Brasil.</p>
-  <a class="btn" href="https://wa.me/5561999947526" target="_blank">Fale no WhatsApp</a>
+<img src="https://raw.githubusercontent.com/assertexpress/assertexpress.github.io/main/assert-removebg-preview%20(3).png" alt="ASSERT EXPRESS">
+<h1>ASSERT EXPRESS – Serviços Regulatórios</h1>
+<p>Assessoria especializada na <strong>criação, atualização e regularização do CNES</strong> para clínicas e profissionais da saúde.</p>
+<a class="btn" href="https://wa.me/5561999947526" target="_blank">Fale no WhatsApp</a>
 </header>
 
+
 <section>
-  <div class="box">
-    <h2>Por que o CNES é obrigatório?</h2>
-    <p>O Cadastro Nacional de Estabelecimentos de Saúde (CNES) é obrigatório para o funcionamento legal de clínicas e consultórios. Um CNES ativo e atualizado garante conformidade legal e amplia oportunidades institucionais.</p>
-    <ul>
-      <li>Participação em programas de financiamento e incentivos públicos;</li>
-      <li>Credenciamento junto a operadoras de planos de saúde;</li>
-      <li>Convênios com prefeituras e empresas da região.</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h2>Riscos da irregularidade</h2>
-    <p>A ausência ou desatualização do CNES impede o reconhecimento do estabelecimento como unidade de saúde, conforme a Portaria nº 1.646/2015.</p>
-    <ul>
-      <li>Impossibilidade de novos credenciamentos;</li>
-      <li>Bloqueio de reembolsos de atendimentos particulares;</li>
-      <li>Risco de suspensão das atividades.</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h2>Nossos serviços</h2>
-    <ul>
-      <li>Criação de CNES</li>
-      <li>Atualização cadastral</li>
-      <li>Inclusão e atualização de profissionais</li>
-      <li>Adequação de serviços, equipes e especialidades</li>
-      <li>Assessoria técnica especializada</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h2>Como funciona</h2>
-    <ol>
-      <li>Contato inicial via WhatsApp, E-mail (assert.express@outlook.com) ou pelo Direct do Instagram</li>
-      <li>Análise da situação cadastral</li>
-      <li>Orientação e solicitação de documentos</li>
-      <li>Execução da criação ou atualização</li>
-      <li>Entrega do CNES regularizado</li>
-    </ol>
-  </div>
+<h2>Por que escolher a ASSERT EXPRESS?</h2>
+<div class="grid">
+<div class="card"><span>⚖️</span><strong>Conformidade Legal</strong><p>Atuação alinhada às normas do Ministério da Saúde.</p></div>
+<div class="card"><span>⚡</span><strong>Agilidade</strong><p>Processos rápidos e acompanhamento contínuo.</p></div>
+<div class="card"><span>🛡️</span><strong>Segurança</strong><p>Evite bloqueios, sanções e inconsistências cadastrais.</p></div>
+<div class="card"><span>📍</span><strong>Atendimento Nacional</strong><p>Suporte para estabelecimentos em todo o Brasil.</p></div>
+</div>
 </section>
 
-<footer>
-  <p>ASSERT EXPRESS – Serviços Regulatórios<br>Atendimento em todo o Brasil</p>
-  <p>
-    <a href="mailto:assert.express@outlook.com">assert.express@outlook.com</a> |
-    <a href="https://www.instagram.com/assert_express?igsh=M2k2ZXNhenc3aXlt" target="_blank">Instagram</a> |
-    <a href="https://wa.me/5561999947526" target="_blank">WhatsApp</a>
-  </p>
-</footer>
 
-<script>
-  const boxes = document.querySelectorAll('.box');
-  const revealOnScroll = () => {
-    const trigger = window.innerHeight * 0.85;
-    boxes.forEach(box => {
-      const top = box.getBoundingClientRect().top;
-      if(top < trigger){ box.classList.add('show'); }
-    });
-  };
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll();
-</script>
-
-</body>
+<section>
+<div class="box">
+<h2>Serviços oferecidos</h2>
+<ul>
+<li>Criação de CNES</li>
 </html>
