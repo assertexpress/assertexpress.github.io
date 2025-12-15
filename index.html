@@ -9,85 +9,146 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Roboto,sans-serif;background:#f4f6f8;color:#333;overflow-x:hidden}
+body{
+  font-family:Roboto,sans-serif;
+  background:#f4f6f8;
+  color:#333;
+  overflow-x:hidden;
+  line-height:1.7;
+}
 
 /* HERO */
 header{
-background:linear-gradient(rgba(15,76,129,.85),rgba(26,115,232,.85)),
-url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;background-position:center;
-color:#fff;text-align:center;padding:120px 20px;
-animation:fadeDown 1.2s ease
+  background:linear-gradient(rgba(15,76,129,.85),rgba(26,115,232,.85)),
+  url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=80');
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  text-align:center;
+  padding:130px 20px;
+  animation:fadeDown 1.2s ease;
 }
-header img{max-width:170px;margin-bottom:20px}
-header h1{font-size:2.4em;margin-bottom:15px}
-header p{max-width:850px;margin:auto;font-size:1.1em}
+header img{max-width:180px;margin-bottom:30px}
+header h1{font-size:2.5em;margin-bottom:20px}
+header p{max-width:900px;margin:auto;font-size:1.15em}
 
 /* BOTÃO */
 .btn{
-display:inline-block;margin-top:25px;
-background:#25d366;color:#fff;
-padding:15px 35px;border-radius:50px;
-text-decoration:none;font-weight:bold;
-transition:.3s
+  display:inline-block;
+  margin-top:35px;
+  background:#25d366;
+  color:#fff;
+  padding:16px 40px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
 }
-.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.3)}
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(0,0,0,.3);
+}
 
-section{max-width:1200px;margin:auto;padding:70px 20px}
+/* SEÇÕES */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:100px 20px;
+}
 
-h2{text-align:center;color:#0f4c81;margin-bottom:40px}
+h2{
+  text-align:center;
+  color:#0f4c81;
+  margin-bottom:60px;
+  font-size:2.2em;
+}
 
 /* GRID */
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
 }
 
 /* CARDS E BOX */
 .card,.box{
-background:#fff;
-padding:35px;
-border-radius:16px;
-box-shadow:0 8px 25px rgba(0,0,0,.12);
-opacity:0;
-transform:translateY(40px);
-transition:.8s ease
+  background:#fff;
+  padding:45px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  opacity:0;
+  transform:translateY(50px);
+  transition:.9s ease;
 }
+
 .card.show,.box.show{
-opacity:1;
-transform:translateY(0)
+  opacity:1;
+  transform:translateY(0);
 }
-.card{text-align:center}
-.card span{font-size:2.2em;display:block;margin-bottom:10px}
-.card:hover{transform:translateY(-8px)}
+
+.card{
+  text-align:center;
+}
+.card span{
+  font-size:2.5em;
+  display:block;
+  margin-bottom:20px;
+}
+.card:hover{
+  transform:translateY(-10px);
+}
+
+/* LISTAS */
+ul,ol{
+  margin-top:25px;
+  padding-left:25px;
+}
+li{
+  margin-bottom:15px;
+}
+
+/* ESPAÇO ENTRE BOXES */
+.box{
+  margin-bottom:70px;
+}
 
 /* FOOTER */
 footer{
-background:#0f4c81;color:#fff;
-text-align:center;padding:40px 20px
+  background:#0f4c81;
+  color:#fff;
+  text-align:center;
+  padding:50px 20px;
 }
-footer a{color:#fff;text-decoration:underline;margin:0 5px}
+footer a{
+  color:#fff;
+  text-decoration:underline;
+  margin:0 8px;
+}
 
 /* WHATSAPP */
 .whatsapp{
-position:fixed;bottom:25px;right:25px;
-background:#25d366;color:#fff;
-padding:15px 18px;border-radius:50%;
-font-size:22px;text-decoration:none;
-animation:pulse 2s infinite;
-z-index:999
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  background:#25d366;
+  color:#fff;
+  padding:16px 20px;
+  border-radius:50%;
+  font-size:24px;
+  text-decoration:none;
+  animation:pulse 2s infinite;
+  z-index:999;
 }
 
 /* ANIMAÇÕES */
 @keyframes fadeDown{
-from{opacity:0;transform:translateY(-30px)}
-to{opacity:1;transform:translateY(0)}
+  from{opacity:0;transform:translateY(-40px)}
+  to{opacity:1;transform:translateY(0)}
 }
 @keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.08)}
-100%{transform:scale(1)}
+  0%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+  100%{transform:scale(1)}
 }
 </style>
 </head>
@@ -104,22 +165,33 @@ to{opacity:1;transform:translateY(0)}
 <section>
 <h2>Por que escolher a ASSERT EXPRESS?</h2>
 <div class="grid">
-<div class="card"><span>⚖️</span>Conformidade legal</div>
-<div class="card"><span>⚡</span>Agilidade</div>
-<div class="card"><span>🛡️</span>Segurança regulatória</div>
-<div class="card"><span>📍</span>Atendimento nacional</div>
+  <div class="card"><span>⚖️</span>Conformidade legal</div>
+  <div class="card"><span>⚡</span>Agilidade</div>
+  <div class="card"><span>🛡️</span>Segurança regulatória</div>
+  <div class="card"><span>📍</span>Atendimento nacional</div>
 </div>
 </section>
 
 <section>
+
 <div class="box">
 <h2>Por que o CNES é obrigatório?</h2>
-<p>O CNES é obrigatório para o funcionamento legal de clínicas e consultórios.</p>
+<p>O Cadastro Nacional de Estabelecimentos de Saúde (CNES) é obrigatório para o funcionamento legal de clínicas e consultórios. Um CNES ativo e atualizado garante conformidade legal e amplia oportunidades institucionais.</p>
+<ul>
+<li>Participação em programas de financiamento e incentivos públicos;</li>
+<li>Credenciamento junto a operadoras de planos de saúde;</li>
+<li>Convênios com prefeituras e empresas da região.</li>
+</ul>
 </div>
 
 <div class="box">
 <h2>Riscos da irregularidade</h2>
-<p>A ausência ou desatualização pode resultar em bloqueios e suspensão.</p>
+<p>A ausência ou desatualização do CNES impede o reconhecimento do estabelecimento como unidade de saúde, conforme a Portaria nº 1.646/2015.</p>
+<ul>
+<li>Impossibilidade de novos credenciamentos;</li>
+<li>Bloqueio de reembolsos de atendimentos particulares;</li>
+<li>Risco de suspensão das atividades.</li>
+</ul>
 </div>
 
 <div class="box">
@@ -127,44 +199,47 @@ to{opacity:1;transform:translateY(0)}
 <ul>
 <li>Criação de CNES</li>
 <li>Atualização cadastral</li>
-<li>Inclusão de profissionais</li>
-<li>Assessoria regulatória</li>
+<li>Inclusão e atualização de profissionais</li>
+<li>Adequação de serviços, equipes e especialidades</li>
+<li>Assessoria técnica especializada</li>
 </ul>
 </div>
 
 <div class="box">
 <h2>Como funciona</h2>
 <ol>
-<li>Contato</li>
-<li>Análise</li>
-<li>Documentos</li>
-<li>Execução</li>
-<li>Entrega</li>
+<li>Contato inicial via WhatsApp, E-mail (assert.express@outlook.com) ou pelo Direct do Instagram</li>
+<li>Análise da situação cadastral</li>
+<li>Orientação e solicitação de documentos</li>
+<li>Execução da criação ou atualização</li>
+<li>Entrega do CNES regularizado</li>
 </ol>
 </div>
+
 </section>
 
 <footer>
-<p>ASSERT EXPRESS – Serviços Regulatórios</p>
+<p>ASSERT EXPRESS – Serviços Regulatórios<br>Atendimento em todo o Brasil</p>
 <p>
 <a href="mailto:assert.express@outlook.com">assert.express@outlook.com</a> |
-<a href="https://www.instagram.com/assert_express" target="_blank">Instagram</a>
+<a href="https://www.instagram.com/assert_express?igsh=M2k2ZXNhenc3aXlt" target="_blank">Instagram</a> |
+<a href="https://wa.me/5561999947526" target="_blank">WhatsApp</a>
 </p>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/5561999947526">💬</a>
 
 <script>
-const elements = document.querySelectorAll('.box, .card');
-const reveal = () => {
-  const trigger = window.innerHeight * 0.85;
-  elements.forEach(el => {
-    if(el.getBoundingClientRect().top < trigger){
+const elements=document.querySelectorAll('.box,.card');
+const reveal=()=>{
+  const trigger=window.innerHeight*0.85;
+  elements.forEach(el=>{
+    if(el.getBoundingClientRect().top<trigger){
       el.classList.add('show');
     }
   });
 };
-window.addEventListener('scroll', reveal);
+window.addEventListener('scroll',reveal);
 reveal();
 </script>
 
