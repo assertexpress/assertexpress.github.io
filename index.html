@@ -25,25 +25,31 @@ header{
   background-position:center;
   color:#fff;
   text-align:center;
-  padding:140px 20px;
+  padding:150px 20px;
 }
-header img{max-width:180px;margin-bottom:30px}
+header img{
+  max-width:260px; /* LOGO MAIOR */
+  margin-bottom:35px;
+}
 header h1{font-size:2.6em;margin-bottom:20px}
 header p{max-width:900px;margin:auto;font-size:1.15em}
 
 /* BOTÃO */
 .btn{
   display:inline-block;
-  margin-top:35px;
+  margin-top:40px;
   background:#25d366;
   color:#fff;
-  padding:16px 40px;
+  padding:18px 45px;
   border-radius:50px;
   text-decoration:none;
   font-weight:bold;
   transition:.3s;
 }
-.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(0,0,0,.3);
+}
 
 /* SEÇÕES */
 section{
@@ -52,11 +58,49 @@ section{
   padding:110px 20px;
 }
 
+/* TAGS / CARDS */
+h2{
+  text-align:center;
+  color:#0f4c81;
+  margin-bottom:60px;
+  font-size:2.3em;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:40px;
+}
+
+.card{
+  background:#fff;
+  padding:45px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  text-align:center;
+  opacity:0;
+  transform:translateY(50px);
+  transition:.8s ease;
+}
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.card span{
+  font-size:2.8em;
+  display:block;
+  margin-bottom:20px;
+}
+.card:hover{
+  transform:translateY(-10px);
+}
+
+/* BLOCOS GRANDES */
 .section-block{
   background:#fff;
   border-radius:22px;
-  padding:70px;
-  margin-bottom:90px;
+  padding:75px;
+  margin-bottom:100px;
   box-shadow:0 12px 35px rgba(0,0,0,.12);
   opacity:0;
   transform:translateY(60px);
@@ -69,8 +113,6 @@ section{
 
 .section-block h2{
   text-align:left;
-  color:#0f4c81;
-  font-size:2.2em;
   margin-bottom:35px;
   position:relative;
 }
@@ -94,7 +136,7 @@ li{
   margin-bottom:18px;
 }
 
-/* SERVIÇOS EM GRID */
+/* SERVIÇOS */
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -119,7 +161,11 @@ footer{
   text-align:center;
   padding:55px 20px;
 }
-footer a{color:#fff;text-decoration:underline;margin:0 8px}
+footer a{
+  color:#fff;
+  text-decoration:underline;
+  margin:0 8px;
+}
 
 /* WHATSAPP */
 .whatsapp{
@@ -128,14 +174,13 @@ footer a{color:#fff;text-decoration:underline;margin:0 8px}
   right:30px;
   background:#25d366;
   color:#fff;
-  padding:16px 20px;
+  padding:18px 22px;
   border-radius:50%;
-  font-size:24px;
+  font-size:26px;
   text-decoration:none;
   animation:pulse 2s infinite;
   z-index:999;
 }
-
 @keyframes pulse{
   0%{transform:scale(1)}
   50%{transform:scale(1.08)}
@@ -152,6 +197,16 @@ footer a{color:#fff;text-decoration:underline;margin:0 8px}
 <p>Especialistas na criação, atualização e regularização do CNES em todo o Brasil.</p>
 <a class="btn" href="https://wa.me/5561999947526">Fale no WhatsApp</a>
 </header>
+
+<section>
+<h2>Por que escolher a ASSERT EXPRESS?</h2>
+<div class="grid">
+  <div class="card"><span>⚖️</span>Conformidade legal</div>
+  <div class="card"><span>⚡</span>Agilidade</div>
+  <div class="card"><span>🛡️</span>Segurança regulatória</div>
+  <div class="card"><span>📍</span>Atendimento nacional</div>
+</div>
+</section>
 
 <section>
 
@@ -211,12 +266,12 @@ footer a{color:#fff;text-decoration:underline;margin:0 8px}
 <a class="whatsapp" href="https://wa.me/5561999947526">💬</a>
 
 <script>
-const blocks=document.querySelectorAll('.section-block');
+const items=document.querySelectorAll('.section-block,.card');
 const reveal=()=>{
   const trigger=window.innerHeight*0.85;
-  blocks.forEach(b=>{
-    if(b.getBoundingClientRect().top<trigger){
-      b.classList.add('show');
+  items.forEach(i=>{
+    if(i.getBoundingClientRect().top<trigger){
+      i.classList.add('show');
     }
   });
 };
