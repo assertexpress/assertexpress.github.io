@@ -13,8 +13,8 @@ body{
   font-family:Roboto,sans-serif;
   background:#f4f6f8;
   color:#333;
-  overflow-x:hidden;
   line-height:1.7;
+  overflow-x:hidden;
 }
 
 /* HERO */
@@ -25,11 +25,10 @@ header{
   background-position:center;
   color:#fff;
   text-align:center;
-  padding:130px 20px;
-  animation:fadeDown 1.2s ease;
+  padding:140px 20px;
 }
 header img{max-width:180px;margin-bottom:30px}
-header h1{font-size:2.5em;margin-bottom:20px}
+header h1{font-size:2.6em;margin-bottom:20px}
 header p{max-width:900px;margin:auto;font-size:1.15em}
 
 /* BOTÃO */
@@ -44,72 +43,73 @@ header p{max-width:900px;margin:auto;font-size:1.15em}
   font-weight:bold;
   transition:.3s;
 }
-.btn:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 30px rgba(0,0,0,.3);
-}
+.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.3)}
 
 /* SEÇÕES */
 section{
   max-width:1200px;
   margin:auto;
-  padding:100px 20px;
+  padding:110px 20px;
 }
 
-h2{
-  text-align:center;
-  color:#0f4c81;
-  margin-bottom:60px;
-  font-size:2.2em;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:40px;
-}
-
-/* CARDS E BOX */
-.card,.box{
+.section-block{
   background:#fff;
-  padding:45px;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  border-radius:22px;
+  padding:70px;
+  margin-bottom:90px;
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
   opacity:0;
-  transform:translateY(50px);
-  transition:.9s ease;
+  transform:translateY(60px);
+  transition:1s ease;
 }
-
-.card.show,.box.show{
+.section-block.show{
   opacity:1;
   transform:translateY(0);
 }
 
-.card{
-  text-align:center;
+.section-block h2{
+  text-align:left;
+  color:#0f4c81;
+  font-size:2.2em;
+  margin-bottom:35px;
+  position:relative;
 }
-.card span{
-  font-size:2.5em;
-  display:block;
-  margin-bottom:20px;
-}
-.card:hover{
-  transform:translateY(-10px);
+.section-block h2::after{
+  content:'';
+  width:70px;
+  height:4px;
+  background:#1a73e8;
+  position:absolute;
+  bottom:-10px;
+  left:0;
+  border-radius:5px;
 }
 
 /* LISTAS */
 ul,ol{
-  margin-top:25px;
+  margin-top:30px;
   padding-left:25px;
 }
 li{
-  margin-bottom:15px;
+  margin-bottom:18px;
 }
 
-/* ESPAÇO ENTRE BOXES */
-.box{
-  margin-bottom:70px;
+/* SERVIÇOS EM GRID */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+.service-item{
+  background:#f4f6f8;
+  padding:30px;
+  border-radius:16px;
+  transition:.3s;
+}
+.service-item:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
 /* FOOTER */
@@ -117,13 +117,9 @@ footer{
   background:#0f4c81;
   color:#fff;
   text-align:center;
-  padding:50px 20px;
+  padding:55px 20px;
 }
-footer a{
-  color:#fff;
-  text-decoration:underline;
-  margin:0 8px;
-}
+footer a{color:#fff;text-decoration:underline;margin:0 8px}
 
 /* WHATSAPP */
 .whatsapp{
@@ -140,11 +136,6 @@ footer a{
   z-index:999;
 }
 
-/* ANIMAÇÕES */
-@keyframes fadeDown{
-  from{opacity:0;transform:translateY(-40px)}
-  to{opacity:1;transform:translateY(0)}
-}
 @keyframes pulse{
   0%{transform:scale(1)}
   50%{transform:scale(1.08)}
@@ -163,20 +154,10 @@ footer a{
 </header>
 
 <section>
-<h2>Por que escolher a ASSERT EXPRESS?</h2>
-<div class="grid">
-  <div class="card"><span>⚖️</span>Conformidade legal</div>
-  <div class="card"><span>⚡</span>Agilidade</div>
-  <div class="card"><span>🛡️</span>Segurança regulatória</div>
-  <div class="card"><span>📍</span>Atendimento nacional</div>
-</div>
-</section>
 
-<section>
-
-<div class="box">
+<div class="section-block">
 <h2>Por que o CNES é obrigatório?</h2>
-<p>O Cadastro Nacional de Estabelecimentos de Saúde (CNES) é obrigatório para o funcionamento legal de clínicas e consultórios. Um CNES ativo e atualizado garante conformidade legal e amplia oportunidades institucionais.</p>
+<p>O Cadastro Nacional de Estabelecimentos de Saúde (CNES) é obrigatório para o funcionamento legal de clínicas e consultórios.</p>
 <ul>
 <li>Participação em programas de financiamento e incentivos públicos;</li>
 <li>Credenciamento junto a operadoras de planos de saúde;</li>
@@ -184,7 +165,7 @@ footer a{
 </ul>
 </div>
 
-<div class="box">
+<div class="section-block">
 <h2>Riscos da irregularidade</h2>
 <p>A ausência ou desatualização do CNES impede o reconhecimento do estabelecimento como unidade de saúde, conforme a Portaria nº 1.646/2015.</p>
 <ul>
@@ -194,21 +175,21 @@ footer a{
 </ul>
 </div>
 
-<div class="box">
+<div class="section-block">
 <h2>Nossos serviços</h2>
-<ul>
-<li>Criação de CNES</li>
-<li>Atualização cadastral</li>
-<li>Inclusão e atualização de profissionais</li>
-<li>Adequação de serviços, equipes e especialidades</li>
-<li>Assessoria técnica especializada</li>
-</ul>
+<div class="services">
+<div class="service-item">Criação de CNES</div>
+<div class="service-item">Atualização cadastral</div>
+<div class="service-item">Inclusão e atualização de profissionais</div>
+<div class="service-item">Adequação de serviços e especialidades</div>
+<div class="service-item">Assessoria técnica especializada</div>
+</div>
 </div>
 
-<div class="box">
+<div class="section-block">
 <h2>Como funciona</h2>
 <ol>
-<li>Contato inicial via WhatsApp, E-mail (assert.express@outlook.com) ou pelo Direct do Instagram</li>
+<li>Contato inicial via WhatsApp, e-mail ou Instagram</li>
 <li>Análise da situação cadastral</li>
 <li>Orientação e solicitação de documentos</li>
 <li>Execução da criação ou atualização</li>
@@ -230,12 +211,12 @@ footer a{
 <a class="whatsapp" href="https://wa.me/5561999947526">💬</a>
 
 <script>
-const elements=document.querySelectorAll('.box,.card');
+const blocks=document.querySelectorAll('.section-block');
 const reveal=()=>{
   const trigger=window.innerHeight*0.85;
-  elements.forEach(el=>{
-    if(el.getBoundingClientRect().top<trigger){
-      el.classList.add('show');
+  blocks.forEach(b=>{
+    if(b.getBoundingClientRect().top<trigger){
+      b.classList.add('show');
     }
   });
 };
